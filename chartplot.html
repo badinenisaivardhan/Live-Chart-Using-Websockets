@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RealTime Charts Update Using Websocket - Socket.io</title>
+  </head>
+  <body>
+
+    <h1>Charts Page</h1>
+    <br>
+    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/chartscript.js"></script>
+    <script>
+    var Xtime = [];
+    var YData = [];
+
+    var Chart = new Chart("myChart", {
+      type: "line",
+      data: {
+        labels: Xtime,
+        datasets: [{
+          label: 'Real Time Chart  Using WebSocket Client',
+          fill: false,
+          borderColor: 'rgb(166, 13, 29)',
+          tension: 0.4,
+          data: YData
+        }]
+      }});  
+
+    </script>
+  </body>
+</html>
